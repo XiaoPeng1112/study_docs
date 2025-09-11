@@ -1,4 +1,6 @@
 
+- 数据结构
+  - [基础](./Text/DataStructure/inro.md)
 - JavaScript
   - [基础](./Text/javascript/intro.md)
 
