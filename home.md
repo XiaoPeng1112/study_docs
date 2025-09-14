@@ -11,5 +11,5 @@
 2. 启动
 
 ```bash
- docsify serve interviews_study_docs
+ docsify serve 
 ```
