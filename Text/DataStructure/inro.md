@@ -106,5 +106,39 @@ function removeHead() {
 function removeTail() {
 
 }
+```
 
+8. 获取链表长度
+```
+function getLength() {
+    let length = 0;
+    let currentNode = this.head;
+    while(currentNode){ // 遍历节点
+        length++;
+        currentNode = currentNode.next;
+    }
+    return length;
+}
+```
+
+9. 给定一个链表，移除该链表中倒数第N个节点，并返回新的链表。 输入：head = [1,2,3,4,5,6,7,8,9,10] , n = 5。输出：[1,2,3,4,5,7,8,9,10]；
+```
+function removeNthFromEnd(head, n) {
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let first = dummy;
+    let second = dummy;
+    // 1. 移动 first 指针，使其领先 second 指针 n + 1 步，使 second 指针指向待删除节点的前一个节点
+    for (let i = 0; i < n + 1; i++) {
+        first = first.next;
+    }
+    // 同步移动，直到 first 指针到达 null
+    while (first !== null) {
+        first = first.next;
+        second = second.next;
+    }
+    // second.next 指向待删除节点，删除该节点
+    second.next = second.next.next;
+    return dummy.next;
+}
 ```
