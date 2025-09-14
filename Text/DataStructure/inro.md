@@ -104,7 +104,13 @@ function removeHead() {
 7. 删除尾部节点
 ```
 function removeTail() {
-
+    let preNode = null;
+    let currentNode = this.head;
+    while(currentNode.next){
+        preNode = currentNode;
+        currentNode = currentNode.next;
+    }
+    preNode.next = null; // 前置节点的next指向null
 }
 ```
 
